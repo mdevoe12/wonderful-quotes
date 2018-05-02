@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-      <appNewQuote></appNewQuote>
+      <appNewQuote @quoteAdded="newQuote"></appNewQuote>
       <appQuoteGrid :quotes="quotes"></appQuoteGrid>
     </div>
 </template>
@@ -20,6 +20,11 @@
         quotes: [
           'Just to see something'
         ]
+      }
+    },
+    methods: {
+      newQuote(quote) {
+        this.quotes.push(quote)
       }
     }
   }
