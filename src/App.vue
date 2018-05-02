@@ -28,12 +28,15 @@
       return {
         maxQuotes: 10,
         quotes: [
-          'Just to see something'
+          'This is an example quote. So wonderful. So quote-like.'
         ]
       }
     },
     methods: {
       newQuote(quote) {
+        if (this.quotes.length >= this.maxQuotes) {
+          return alert('Please delete quotes first.')
+        }
         this.quotes.push(quote)
       },
       deleteQuote(index) {
